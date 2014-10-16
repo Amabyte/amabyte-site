@@ -1,0 +1,29 @@
+.index
+  @extend .text-center
+  .welcome
+    @extend .container-fluid
+    color: white
+    padding-top: $spacing
+    padding-bottom: $spacing
+    +respond-to(desk)
+      padding-top: $spacing*2.5
+    background: $primary-color
+    .col-welcome
+      +make-md-column-offset(3)
+      +make-md-column(6)
+      +make-sm-column-offset(2)
+      +make-sm-column(8)
+    .logo
+      @extend .img-responsive
+      +center-block
+    font-weight: lighter
+    .cname
+      font-size: 80px
+      +respond-to(only-tab)
+        font-size: 70px
+      +respond-to(mob)
+        font-size: 60px
+    .intro
+      font-size: 30px
+      +respond-to
+        font-size: 20px
