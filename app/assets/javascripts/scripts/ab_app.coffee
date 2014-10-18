@@ -3,6 +3,7 @@ class AB.App
   constructor: ->
     @fixWelcomeHeight()
     @fixBlockBodyHeight()
+    @makeNavbarSticky()
     U.resize @onResize
 
   onResize: =>
@@ -21,3 +22,7 @@ class AB.App
         $(this).outerHeight()
       ).get()
       blocks.css("min-height", maxHeight)
+
+  makeNavbarSticky: ->
+    $(".ab-navbar").affix offset:
+      top: $(".welcome").outerHeight()

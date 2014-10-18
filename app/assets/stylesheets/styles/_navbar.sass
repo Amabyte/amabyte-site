@@ -1,2 +1,6 @@
 .ab-navbar
   border-top-color: $primary-color
+.affix
+  @extend .navbar-fixed-top
+  & + .nav-sticky-fix
+    height: $navbar-height + $spacing + 2
