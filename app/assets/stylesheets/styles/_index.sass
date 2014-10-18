@@ -5,14 +5,16 @@
     color: white
     padding-top: $spacing
     padding-bottom: $spacing
-    +respond-to(desk)
-      padding-top: $spacing*2.5
     background: $primary-color
     .col-welcome
       +make-md-column-offset(3)
       +make-md-column(6)
       +make-sm-column-offset(2)
       +make-sm-column(8)
+      display: table
+      .content
+        display: table-cell
+        vertical-align: middle
     .logo
       @extend .img-responsive
       +center-block
@@ -25,5 +27,12 @@
         font-size: 60px
     .intro
       font-size: 30px
-      +respond-to
+      +respond-to(only-tab)
+        font-size: 25px
+      +respond-to(mob)
         font-size: 20px
+  .block-section
+    @extend .container-fluid
+    .title
+      @extend .text-center
+      +make-md-column(12)
