@@ -48,3 +48,7 @@ gem 'autoprefixer-rails'
 gem 'compass-rails'
 gem 'haml'
 gem 'font-awesome-sass'
+
+#heroku
+gem 'rails_12factor', group: :production
+ruby "2.1.1"
