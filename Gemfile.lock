@@ -49,6 +49,8 @@ GEM
       compass (>= 0.12.2)
     erubis (2.7.0)
     execjs (2.2.2)
+    font-awesome-sass (4.2.1)
+      sass (~> 3.2)
     fssm (0.2.10)
     haml (4.0.5)
       tilt
@@ -132,6 +134,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   compass-rails
+  font-awesome-sass
   haml
   jbuilder (~> 2.0)
   jquery-rails

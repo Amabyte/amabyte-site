@@ -34,6 +34,63 @@
         font-size: 20px
   .block-section
     @extend .container-fluid
-    .title
-      @extend .text-center
-      +make-md-column(12)
+    .quotation
+      margin: $spacing/2 inherit
+      width: 80%
+      +respond-to(mob)
+        width: 100%
+      font-weight: lighter
+      padding: $spacing/2
+      font-size: 24px
+      font-style: italic
+      +respond-to(only-tab)
+        font-size: 21px
+      +respond-to(mob)
+        font-size: 16px
+      +center-block
+      =after-before
+        font-size: 30px
+        color: adjust-lightness($black, 50)
+        font-style: italic
+        position: relative
+        +respond-to(only-tab)
+          font-size: 27px
+        +respond-to(mob)
+          font-size: 20px
+      &:before
+        +fa-make(quote-left)
+        margin-right: $spacing/2
+        +after-before
+        top: -($spacing/2)
+      &:after
+        content: $fa-var-quote-right
+        +fa-make(quote-right)
+        margin-left: $spacing/2
+        +after-before
+        top: $spacing/2
+    h2
+      color: $black
+    .blocks
+      +make-row
+      padding: $spacing $spacing*2
+      +respond-to(mob)
+        padding: inherit
+      .block
+        +make-md-column(6)
+        margin-bottom: $spacing/2
+        .body
+          padding: $spacing/2
+          background: $white
+          border: 1px solid adjust-lightness($white, -3)
+          +box-shadow(0px 2px 2px -1px rgba(black, 0.18))
+          @extend .text-left
+          .title
+            @extend h3
+            margin-top: $spacing/2
+          ul
+            @extend .list-unstyled
+            margin-left: $spacing/2
+            li
+              margin-bottom: $spacing/4
+              &:last-child
+                margin-bottom: inherit

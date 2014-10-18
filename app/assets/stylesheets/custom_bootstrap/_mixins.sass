@@ -20,3 +20,6 @@
 =ellipsis($width: 100%)
   +text-overflow()
   width: $width
+=fa-make($icon)
+  @extend .fa
+  @extend .fa-#{$icon}
