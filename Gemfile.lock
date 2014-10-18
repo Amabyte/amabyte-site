@@ -54,6 +54,8 @@ GEM
     fssm (0.2.10)
     haml (4.0.5)
       tilt
+    heroku-deflater (0.5.3)
+      rack (>= 1.4.5)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.2.2)
@@ -142,6 +144,7 @@ DEPENDENCIES
   compass-rails
   font-awesome-sass
   haml
+  heroku-deflater
   jbuilder (~> 2.0)
   jquery-rails
   modernizr-rails
