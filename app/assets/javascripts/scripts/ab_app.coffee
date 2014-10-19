@@ -29,6 +29,7 @@ class AB.App
       top: $(".welcome").outerHeight()
 
   makeTechnologyFly: ->
+    $(".wheel-button + ul .remove-mob").remove() if U.isScreen "mob"
     $(".wheel-button").wheelmenu
       trigger: "hover"
       animation: "fly"

@@ -122,8 +122,23 @@
           .web-logo
             +fa-make(globe)
             @extend .logo
-  .technology-section
-    @extend .container-fluid
-    .tech-column
-      +make-md-column(4)
-      height: 300px
+    =tech-logo
+      background: $white
+      +border-radius(50%)
+    .wheel-button
+      &.active
+        img
+          +filter(grayscale(0%))
+      img
+        +tech-logo
+        +box-shadow(0px 1px 5px -1px rgba(black, 0.18))
+        +filter(grayscale(100%))
+    .wheel
+      li
+        +tech-logo
+        width: 70px
+        height: 70px
+        +box-shadow(0px 3px 10px -1px rgba(black, 0.18))
+        &:hover
+          +box-shadow(0px 5px 15px -1px rgba(black, 0.18))
+
