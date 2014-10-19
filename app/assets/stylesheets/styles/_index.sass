@@ -107,11 +107,12 @@
               font-size: 150px
             +respond-to(mob)
               font-size: 120px
-          &:hover
-            border: 1px solid adjust-lightness($white, -3)
-            +box-shadow(0px 2px 2px -1px rgba(black, 0.18))
-            .logo
-              color: $primary-color
+          +respond-to(desk)
+            &:hover
+              border: 1px solid adjust-lightness($white, -3)
+              +box-shadow(0px 2px 2px -1px rgba(black, 0.18))
+              .logo
+                color: $primary-color
           .android-logo
             +fa-make(android)
             @extend .logo
