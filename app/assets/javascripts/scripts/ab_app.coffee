@@ -4,6 +4,7 @@ class AB.App
     @fixWelcomeHeight()
     @fixBlockBodyHeight()
     @makeNavbarSticky()
+    @makeTechnologyFly()
     U.resize @onResize
 
   onResize: =>
@@ -26,3 +27,10 @@ class AB.App
   makeNavbarSticky: ->
     $(".ab-navbar").affix offset:
       top: $(".welcome").outerHeight()
+
+  makeTechnologyFly: ->
+    $(".wheel-button").wheelmenu
+      trigger: "hover"
+      animation: "fly"
+      animationSpeed: "fast"
+      angle: "all"
