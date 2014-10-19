@@ -15,7 +15,7 @@ class AB.App
     $(".col-welcome").css "min-height", $(".welcome").height()+diff
 
   fixBlockBodyHeight: ->
-    blocks = $(".blocks .body")
+    blocks = $(".block .body")
     blocks.removeAttr "style"
     unless U.isScreen()
       maxHeight = Math.max.apply null, blocks.map(->

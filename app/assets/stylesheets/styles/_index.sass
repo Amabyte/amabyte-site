@@ -7,8 +7,6 @@
     padding-bottom: $spacing
     background: $primary-color
     .col-welcome
-      +make-md-column-offset(3)
-      +make-md-column(6)
       +make-sm-column-offset(2)
       +make-sm-column(8)
       width: 100%
@@ -75,6 +73,16 @@
       padding: $spacing $spacing*2
       +respond-to(mob)
         padding: initial
+      ul
+        @extend .list-unstyled
+        margin-left: $spacing/2
+        li
+          margin-bottom: $spacing/4
+          &:last-child
+            margin-bottom: initial
+      .title
+        @extend h3
+        margin-top: $spacing/2
       .block
         +make-md-column(6)
         margin-bottom: $spacing/2
@@ -84,13 +92,29 @@
           border: 1px solid adjust-lightness($white, -3)
           +box-shadow(0px 2px 2px -1px rgba(black, 0.18))
           @extend .text-left
-          .title
-            @extend h3
-            margin-top: $spacing/2
-          ul
-            @extend .list-unstyled
-            margin-left: $spacing/2
-            li
-              margin-bottom: $spacing/4
-              &:last-child
-                margin-bottom: initial
+      .tech-block
+        +make-md-column(4)
+        +respond-to
+          +make-sm-column(6)
+          &.full
+            +make-sm-column(12)
+        margin-bottom: $spacing
+        .body
+          =logo
+            font-size: 170px
+            +respond-to(only-tab)
+              font-size: 150px
+            +respond-to(mob)
+              font-size: 120px
+          .android-logo
+            +fa-make(android)
+            +logo
+          .android-logo
+            +fa-make(android)
+            +logo
+          .desktop-logo
+            +fa-make(desktop)
+            +logo
+          .web-logo
+            +fa-make(globe)
+            +logo
