@@ -100,21 +100,24 @@
             +make-sm-column(12)
         margin-bottom: $spacing
         .body
-          =logo
+          padding: $spacing/2
+          .logo
             font-size: 170px
             +respond-to(only-tab)
               font-size: 150px
             +respond-to(mob)
               font-size: 120px
+          &:hover
+            border: 1px solid adjust-lightness($white, -3)
+            +box-shadow(0px 2px 2px -1px rgba(black, 0.18))
+            .logo
+              color: $primary-color
           .android-logo
             +fa-make(android)
-            +logo
-          .android-logo
-            +fa-make(android)
-            +logo
+            @extend .logo
           .desktop-logo
             +fa-make(desktop)
-            +logo
+            @extend .logo
           .web-logo
             +fa-make(globe)
-            +logo
+            @extend .logo
