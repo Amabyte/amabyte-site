@@ -30,8 +30,11 @@ class AB.App
 
   makeTechnologyFly: ->
     $(".wheel-button + ul .remove-mob").remove() if U.isScreen "mob"
-    $(".wheel-button").wheelmenu
-      trigger: "hover"
+    wheelButton = $(".wheel-button")
+    wheelButton.bind "click", (event)->
+      event.preventDefault()
+    wheelButton.wheelmenu
+      trigger: if U.isScreen() then "click" else "hover"
       animation: "fly"
       animationSpeed: "fast"
       angle: "all"
