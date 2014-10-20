@@ -68,6 +68,15 @@
         top: $spacing/2
     h2
       color: $black
+    .note
+      font-variant: small-caps
+      font-size: 17px
+      +respond-to
+        margin-bottom: $spacing/2
+      +respond-to(only-tab)
+        font-size: 16px
+      +respond-to(mob)
+        font-size: 14px
     .blocks
       +make-row
       padding: $spacing $spacing*2
