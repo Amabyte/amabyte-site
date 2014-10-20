@@ -68,6 +68,8 @@
         top: $spacing/2
     h2
       color: $black
+      i
+        color: adjust-lightness($black, 30)
     .note
       font-variant: small-caps
       font-size: 17px
@@ -132,6 +134,11 @@
           .web-logo
             +fa-make(globe)
             @extend .logo
+    &.consistency-section
+      .blocks
+        .consistency-block
+          +make-md-column(12)
+          margin-bottom: $spacing/2
     =tech-logo
       background: $white
       +border-radius(50%)
