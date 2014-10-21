@@ -5,6 +5,7 @@ class AB.App
     @fixBlockBodyHeight()
     @makeNavbarSticky()
     @makeTechnologyFly()
+    @enableValidationOnContactUs()
     U.resize @onResize
 
   onResize: =>
@@ -38,3 +39,6 @@ class AB.App
       animation: "fly"
       animationSpeed: "fast"
       angle: "all"
+
+  enableValidationOnContactUs: ->
+    U.enableValidation($("form.contact-us"))

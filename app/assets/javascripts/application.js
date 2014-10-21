@@ -14,8 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrapValidator.min
 //= require plugins/jquery.ba-throttle-debounce
 //= require plugins/jquery.wheelmenu
+//= require spin
+//= require ladda
 //= require scripts/ab
 //= require scripts/ab_app
 //= require_tree .

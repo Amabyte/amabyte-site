@@ -49,7 +49,8 @@ gem 'compass-rails'
 gem 'haml'
 gem 'font-awesome-sass'
 gem 'modernizr-rails'
-
+gem 'ladda-bootstrap-rails'
+gem 'bootstrap-validator-rails'
 #heroku
 gem 'rails_12factor', group: :production
 gem 'heroku-deflater', :group => :production

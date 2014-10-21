@@ -169,3 +169,40 @@
           %ul
             %li We are always on the lookout to add freshness to our work.
             %li We innovate to evolve the way the industry works.
+  .block-section.contact-us-section
+    .row
+      .col-md-12
+        %h2
+          Contact Us
+    .row
+      .contact-column
+        %form.contact-us{action: "#"}
+          .form-group
+            %label.sr-only{for: "contact-name"} Name
+            %input#contact-name.form-control.contact{name: "name", placeholder: "Name", type: "text", "data-bv-notempty" => "true", "data-bv-notempty-message" => "Name required"}
+          .form-group
+            %label.sr-only{for: "contact-email"} Email/Phone
+            %input#contact-email.form-control.contact{name: "email", placeholder: "Email/Phone", type: "text", "data-bv-notempty" => "true", "data-bv-notempty-message" => "Email/Phone required"}
+          .form-group
+            %label.sr-only{for: "contact-message"} Message
+            %textarea#contact-message.form-control.contact{name: "message", placeholder: "Message", rows: 6, "data-bv-notempty" => "true", "data-bv-notempty-message" => "Message required"}
+          %button.btn.btn-primary.btn-lg{type: "submit"}
+            Send Message
+  .footer-section
+    .row
+      .col-md-3
+        %ul.list-inline
+          %li
+            %a{href: "#"}
+              .facebook
+          %li
+            %a{href: "#"}
+              .google-plus
+          %li
+            %a{href: "#"}
+              .github
+      .col-md-6
+      .col-md-3
+        .creativecommons
+          %a{:href => "http://creativecommons.org/licenses/by/4.0/", :rel => "license"}
+            %img{:alt => "Creative Commons License", :src => "https://i.creativecommons.org/l/by/4.0/88x31.png", :style => "border-width:0"}

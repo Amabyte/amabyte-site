@@ -32,6 +32,8 @@
         font-size: 20px
   .block-section
     @extend .container-fluid
+    padding-top: $spacing
+    padding-bottom: $spacing 
     .quotation
       margin: $spacing/2 inherit
       width: 80%
@@ -139,6 +141,12 @@
         .consistency-block
           +make-md-column(12)
           margin-bottom: $spacing/2
+    &.contact-us-section
+      background: adjust-lightness($white, -3)
+      .contact-column
+        padding: $spacing
+        +make-md-column-offset(4)
+        +make-md-column(4)
     =tech-logo
       background: $white
       +border-radius(50%)
@@ -158,4 +166,37 @@
         +box-shadow(0px 3px 10px -1px rgba(black, 0.18))
         &:hover
           +box-shadow(0px 5px 15px -1px rgba(black, 0.18))
-
+  .footer-section
+    color: $white
+    @extend .container-fluid
+    background: $primary-color
+    padding-top: $spacing/2
+    padding-bottom: $spacing/2
+    %a
+      color: $white !important
+      text-decoration: underline
+    .list-inline
+      margin-bottom: 0px
+    .social
+      width: $spacing*1.5
+      height: $spacing*1.5
+      color: $white
+      font-size: 20px
+      padding-top: 5px
+      &:hover
+        +opacity(.8)
+    .facebook
+      +fa-make(facebook)
+      @extend .social
+      background: #48649F
+    .google-plus
+      +fa-make(google-plus)
+      @extend .social
+      background: #D73D32
+    .github
+      +fa-make(github)
+      @extend .social
+      background: $black
+    .creativecommons
+      +respond-to(desk)
+        @extend .pull-right

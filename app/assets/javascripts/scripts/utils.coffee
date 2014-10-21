@@ -15,3 +15,11 @@ window.U =
       $(window).width() < 1130 and U.isScreen("desk")
     else
       throw new Error("Unknown screen")
+      
+  enableValidation: (view, options = {}) ->
+    default_opt = 
+      feedbackIcons:
+        valid: "glyphicon glyphicon-ok"
+        invalid: "glyphicon glyphicon-remove"
+        validating: "glyphicon glyphicon-refresh"
+    view.bootstrapValidator $.extend({}, default_opt, options)
