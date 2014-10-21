@@ -74,4 +74,4 @@ class AB.App
     successNotice.slideDown ->
       setTimeout ->
         successNotice.slideUp()
-      , 3000
+      , 5000
