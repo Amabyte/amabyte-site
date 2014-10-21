@@ -1,0 +1,20 @@
+.block-section.contact-us-section
+  .row
+    .col-md-12
+      %h2
+        Contact Us
+  .row
+    .contact-column
+      .notice{style: "display: none;"} Thank you for contacting us. We'll get back to you soon!
+      %form.contact-us{action: "#"}
+        .form-group
+          %label.sr-only{for: "contact-name"} Name
+          %input#contact-name.form-control.contact{name: "name", placeholder: "Name", type: "text", "data-bv-notempty" => "true", "data-bv-notempty-message" => "Name required"}
+        .form-group
+          %label.sr-only{for: "contact-email"} Email/Phone
+          %input#contact-email.form-control.contact{name: "email", placeholder: "Email/Phone", type: "text", "data-bv-notempty" => "true", "data-bv-notempty-message" => "Email/Phone required"}
+        .form-group
+          %label.sr-only{for: "contact-message"} Message
+          %textarea#contact-message.form-control.contact{name: "message", placeholder: "Message", rows: 6, "data-bv-notempty" => "true", "data-bv-notempty-message" => "Message required"}
+        %button.btn.btn-primary.btn-lg.ladda-button{type: "submit", "data-size" => "l", "data-style" => "zoom-out"}
+          Send Message

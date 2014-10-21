@@ -6,6 +6,7 @@ class AB.App
     @makeNavbarSticky()
     @makeTechnologyFly()
     @enableValidationOnContactUs()
+    @makeContactUsSubmit()
     U.resize @onResize
 
   onResize: =>
@@ -42,3 +43,35 @@ class AB.App
 
   enableValidationOnContactUs: ->
     U.enableValidation($("form.contact-us"))
+
+  makeContactUsSubmit: ->
+    form = $("form.contact-us")
+    @submitButton = Ladda.create($("button", form)[0])
+    _this = @
+    form.submit (event)->
+      event.preventDefault()
+      unless form.data('bootstrapValidator').isValid()
+        return
+      _this.submitButton.start()
+      name = $("#contact-name", form).val()
+      emailOrPhone = $("#contact-email", form).val()
+      message = $("#contact-message", form).val()
+      requestBody = {name: name, from: emailOrPhone, message: message}
+      U.api
+        url: "/contact_us.json"
+        type: "POST"
+        data: JSON.stringify(requestBody)
+        success: (data) ->
+          _this.showContactUsSuccess data.message
+          form[0].reset()
+          form.data('bootstrapValidator').resetForm()
+        complete: ->
+          _this.submitButton.stop()
+
+  showContactUsSuccess: (msg) ->
+    successNotice = $(".contact-column .notice")
+    successNotice.text msg
+    successNotice.slideDown ->
+      setTimeout ->
+        successNotice.slideUp()
+      , 3000

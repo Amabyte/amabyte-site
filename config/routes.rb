@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :main, only: :index do
-  end
+  post :contact_us, to: "main#contact_us"
   root "main#index"
 end

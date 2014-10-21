@@ -23,3 +23,21 @@ window.U =
         invalid: "glyphicon glyphicon-remove"
         validating: "glyphicon glyphicon-refresh"
     view.bootstrapValidator $.extend({}, default_opt, options)
+
+  api: (options = {}) ->
+    defaultError = options.error
+    delete options.error
+    unless defaultError
+      defaultError = (data) ->
+        U.showMsgPop()
+    default_opt =
+      type: "GET"
+      contentType: "application/json"
+      accept: "application/json"
+      dataType: "json"
+      error: (data) ->
+        defaultError data
+    $.ajax $.extend({}, default_opt, options)
+
+  showMsgPop: (msg="Request could not be processed.\nPlease try again") ->
+    alert msg
