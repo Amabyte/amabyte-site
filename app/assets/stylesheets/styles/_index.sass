@@ -179,8 +179,7 @@
       color: $white !important
       text-decoration: underline
     .list-inline
-      +respond-to(desk)
-        margin-bottom: 0px
+      margin-bottom: 0px
     .social
       width: $spacing*1.5
       height: $spacing*1.5
@@ -202,6 +201,7 @@
       @extend .social
       background: $black
     .creativecommons
+      @extend .h-f-t
       @extend .pull-right
       +respond-to
         float: none !important
