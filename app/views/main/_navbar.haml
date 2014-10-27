@@ -1,18 +1,18 @@
 %nav.navbar.navbar-default.ab-navbar{:role => "navigation"}
   .container-fluid
     .navbar-header
-      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-amabuye-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand{:href => "#"} Amabyte
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    #bs-amabuye-navbar-collapse.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
+        %li#welcome-menu.active
           %a{:href => "#"} Welcome
-        %li
-          %a{:href => "#"} About
-        %li
-          %a{:href => "#"} Contact Us
+        %li#about-menu
+          %a{:href => "#about"} About
+        %li#contact-us-menu
+          %a{:href => "#contact-us"} Contact Us
 .nav-sticky-fix

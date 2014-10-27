@@ -7,6 +7,7 @@ class AB.App
     @makeTechnologyFly()
     @enableValidationOnContactUs()
     @makeContactUsSubmit()
+    @setUpMenuNavigation()
     U.resize @onResize
 
   onResize: =>
@@ -75,3 +76,24 @@ class AB.App
       setTimeout ->
         successNotice.slideUp()
       , 5000
+
+  setUpMenuNavigation: ->
+    _this = @
+    $(window).scroll ->
+      if _this.isViewVisible("#contact-us")
+        _this.changeMenuActive "#contact-us-menu"
+      else if _this.isViewVisible("#about")
+        _this.changeMenuActive "#about-menu"
+      else if _this.isViewVisible("#welcome")
+        _this.changeMenuActive "#welcome-menu"
+
+  isViewVisible: (elem) ->
+    docViewTop = $(window).scrollTop()
+    docViewBottom = docViewTop + $(window).height()
+    elemTop = $(elem).offset().top
+    elemBottom = elemTop + $(elem).height()
+    (elemBottom <= docViewBottom) and (elemTop >= docViewTop)
+
+  changeMenuActive: (elem) ->
+    $(".navbar-nav li").removeClass("active")
+    $(elem).addClass("active")
